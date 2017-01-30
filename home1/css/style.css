@@ -1,0 +1,15 @@
+body{
+	margin:0;
+	font:14px/16px Arial, sans-serif;
+	padding:0;
+}
+#wrapper{
+	padding:20px 0;
+	width:1200px;
+	margin:0 auto;
+}
+.text-block button{
+	margin:0 0 20px;
+	cursor:pointer;
+}
+.text-block{margin:0 0 50px;}
