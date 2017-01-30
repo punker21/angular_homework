@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular 01</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .ng-scope {
+            /*border: 1px solid red;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="main" ng-controller="MainController">
+            <form ng-submit="addTask()">
+                <input type="text" ng-model="newTaskName">
+                <button type="submit" ng-disabled="!newTaskName">Add Task</button>
+            </form>
+            <table ng-if="taskList && taskList.length">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Done</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ALL</td>
+                        <td><label><input type="checkbox" ng-model="task.done"></label></td>
+                        <td><button class="delete" ng-click="removeTask(task.id)">[X]</button></td>
+                    </tr>
+                    <tr ng-repeat="task in taskList | limitTo:countPerPage:offset | orderBy:'name':false track by $index" ng-class="{striped: task.done}">
+                        <td>{{task.name}}</td>
+                        <td>
+                            <label><input type="checkbox" ng-model="task.done"></label>
+                        </td>
+                        <td>
+                            <button class="delete" ng-click="removeTask(task.id)">[X]</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
