@@ -58,3 +58,35 @@ button.delete:hover {
 button:focus {
     outline: none;
 }
+.pagination{
+    padding:50px 0 0;
+    margin:0 -5px;
+    list-style:none;
+    letter-spacing:-3px;
+}
+.pagination li{
+    display:inline-block;
+    vertical-align:middle;
+    letter-spacing:0;
+    margin:0 5px;
+}
+.pagination a{
+    color:#000;
+    width:30px;
+    height:30px;
+    display:block;
+    line-height:30px;
+    text-align:center;
+    text-decoration:none;
+    border:1px solid #000;
+    -webkit-transition:all .35s ease;
+    -o-transition:all .35s ease;
+    transition:all .35s ease;
+}
+.pagination a:hover{
+    background:#ddd;
+}
+.pagination .active a{
+    background:#000;
+    color:#fff;
+}
