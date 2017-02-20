@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular 01</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="js/index.js"></script>
+    <!--controllers-->
+    <script src="js/controllers/main.controller.js"></script>
+    <script src="js/controllers/clock.controller.js"></script>
+    <script src="js/controllers/header.controller.js"></script>
+    <script src="js/controllers/footer.controller.js"></script>
+    <!--services-->
+    <script src="js/services/constants.js"></script>
+    <script src="js/services/value.js"></script>
+    <script src="js/services/service.js"></script>
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header ng-controller="HeaderController">
+            <h1>Header: {{userName}}</h1>
+            <button ng-click="changeName()">Изменить имя</button>
+            <br><br>
+        </header>
+        <br>
+        <hr>
+        <div ng-controller="FooterController">
+            <button ng-click="stopRepeating()">Хватит повторять</button>
+            <h1>Footer: {{user}}</h1>
+        </div>
+        <!--<div class="main" ng-controller="MainController">-->
+            <!--<div ng-controller="ClockController">-->
+                <!--<h2>{{time | date:"HH:mm:ss"}}</h2>-->
+            <!--</div>-->
+
+            <!--<div ng-switch="var">-->
+                <!--<div ng-switch-when="слоник">СЛОНИК</div>-->
+                <!--<div ng-switch-when="розовый">СЛОНИК</div>-->
+                <!--<div ng-switch-default>Гребаная хрень</div>-->
+            <!--</div>-->
+
+
+            <!--<div class="row">-->
+                <!--<form ng-submit="addTask()">-->
+                    <!--<input type="text" ng-model="newTaskName">-->
+                    <!--<button type="submit" ng-disabled="!newTaskName">Add Task</button>-->
+                <!--</form>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+                <!--<select id="per-page" ng-model="table.countPerPage" ng-options="option.value as option.text for option in countPerPageEnum"></select>-->
+                <!--<label for="per-page">rows per page</label>-->
+            <!--</div>-->
+            <!--<div class="row navigation">-->
+                <!--<button ng-repeat="page in navButtonsArray track by $index"-->
+                <!--ng-click="changePage($index)"-->
+                <!--ng-class="{active: table.currentPage === $index}">-->
+                <!--{{$index + 1}}-->
+            <!--</button>-->
+        <!--</div>-->
+        <!--<table ng-if="taskList && taskList.length">-->
+            <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>ID</th>-->
+                    <!--<th>Name</th>-->
+                    <!--<th>Done</th>-->
+                    <!--<th>Delete</th>-->
+                <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+
+                <!--<tr class="head">-->
+                    <!--<td colspan="2">ALL</td>-->
+                    <!--<td class="check-all" ng-click="toggleCheckAll()">-->
+                        <!--<input type="checkbox" ng-model="table.checkAll"/>-->
+                        <!--<span class="overlay"></span>-->
+                    <!--</td>-->
+                    <!--<td style="background: silver;"><button class="delete" ng-click="removeAllTasks()">x[X]x</button></td>-->
+                <!--</tr>-->
+                <!--<tr ng-repeat="task in taskList | limitTo:table.countPerPage:table.offset | orderBy:'name':true track by $index" ng-class="{striped: task.done}">-->
+                    <!--<td width="30"><span>{{task.id}}</span></td>-->
+                    <!--<td><span>{{task.name}}</span></td>-->
+                    <!--<td width="30">-->
+                        <!--<label><input type="checkbox" ng-model="task.done"></label>-->
+                    <!--</td>-->
+                    <!--<td width="30">-->
+                        <!--<button class="delete" ng-click="removeTask(task.id)">[X]</button>-->
+                    <!--</td>-->
+                <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+        
+</div>
+</body>
+</html>

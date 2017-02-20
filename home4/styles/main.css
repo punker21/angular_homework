@@ -1,0 +1,105 @@
+table {
+    width: 100%;
+}
+td {
+    text-align: center;
+}
+td span {
+    padding: 0 10px;
+}
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+tr:nth-child(odd) td {
+    background-color: #ddd;
+    border: 1px solid #fff;
+}
+tr:nth-child(even) td {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+td > label {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+tr.striped td {
+    color: silver;
+}
+input[type=text],
+button[type=submit]{
+    height: 21px;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+select {
+    height: 30px;
+    width: 100px;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+button[type=submit] {
+    padding: 0 10px;
+    color: #fff;
+    background-color: 	#6B8E23;
+    border: 1px solid #6B8E23;
+}
+button[type=submit]:hover {
+    background-color: #32CD32;
+}
+button[type=submit][disabled] {
+    opacity: 0.5;
+    color: #757575;
+    pointer-events: none;
+    background-color: #ddd;
+}
+button.delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+button.delete:hover {
+    color: #f00;
+}
+button:focus {
+    outline: none;
+}
+.row {
+    margin-bottom: 10px;
+}
+.navigation button {
+    border-radius: 5px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    line-height: 26px;
+    font-size: 13px;
+    color: #fff;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.navigation button:hover {
+    border: 1px solid green;
+    color: green;
+}
+.navigation button.active {
+    border: 1px solid green;
+    background-color: #fff;
+    color: #000;
+}
+tr.head td {
+    background-color: silver;
+}
+.check-all {
+    position: relative;
+}
+.check-all .overlay {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
