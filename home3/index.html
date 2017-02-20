@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <title>Angular 01</title>
+    <title>Angular 03</title>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="styles/main.css">
@@ -14,18 +14,22 @@
                 <input type="text" ng-model="newTaskName">
                 <button type="submit" ng-disabled="!newTaskName">Add Task</button>
             </form>
+            <div class="select-holder">
+                Показывать <span ng-show="countPerPage != null">по </span>
+                <select id="per-page" ng-model="countPerPage" ng-options="option.value as option.text for option in countPerPageEnum"></select>
+            </div>
             <table ng-if="taskList && taskList.length">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Done</th>
+                        <th ng-click="changeCurrentSort('name');">Name &darr;&uarr;</th>
+                        <th ng-click="changeCurrentSort('done');">Done &darr;&uarr;</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>ALL</td>
-                        <td><label><input type="checkbox" ng-model="allChecked" ng-change="checkAllTasks()"></label></td>
+                        <td><input type="checkbox" ng-model="allChecked" ng-change="checkAllTasks()"></td>
                         <td><button class="delete" ng-click="removeAllTasks()">[X]</button></td>
                     </tr>
                     <tr ng-repeat="task in taskList | limitTo:countPerPage:offset track by $index" ng-class="{striped: task.done}">
