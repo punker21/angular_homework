@@ -52,14 +52,20 @@
 				$scope.taskList.sort(mySort);
 
 				function mySort(item2, item1){
-					if (item1[sortPar] < item2[sortPar]) {
+					var val1 = item1[sortPar],
+						val2 = item2[sortPar];
+					if (typeof item1[sortPar] === 'string'){
+						val1.toLowerCase();
+						val2.toLowerCase();
+					}
+					if (val1 < val2) {
 						if($scope.sortDirection){
 							return -1;
 						} else {
 							return 1;
 						}
 					}
-					if (item1[sortPar] > item2[sortPar]) {
+					if (val1 > val2) {
 						if(!$scope.sortDirection){
 							return -1;
 						} else {
